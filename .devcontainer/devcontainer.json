@@ -1,0 +1,20 @@
+{
+  "name": "Spring Boot Dev Env (Gradle + PostgreSQL)",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace/backend",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-spring-initializr",
+        "vscjava.vscode-spring-boot-dashboard",
+        "richardwillis.vscode-gradle",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "ms-vsliveshare.vsliveshare"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
