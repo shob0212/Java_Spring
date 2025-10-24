@@ -18,6 +18,6 @@
       ]
     }
   },
-  "remoteUser": "root",
+  "remoteUser": "vscode",
   "shutdownAction": "stopContainer"
 }
