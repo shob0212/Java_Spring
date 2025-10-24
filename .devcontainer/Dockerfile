@@ -18,8 +18,6 @@ RUN apt-get update && \
     npm install -g gitmoji-cli && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# デフォルトユーザーを vscode に変更（VSCode Dev Containerで推奨）
-USER vscode
 
 # 作業ディレクトリを指定
 WORKDIR /workspace
