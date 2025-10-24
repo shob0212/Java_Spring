@@ -18,11 +18,7 @@ RUN apt-get update && \
     npm install -g gitmoji-cli && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     \
-    # vscodeユーザーを作成（VSCode Dev Container 用）
-    useradd -m vscode && echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-# vscodeユーザーに切り替え
-USER vscode
 
 # 作業ディレクトリを指定
 WORKDIR /workspace
