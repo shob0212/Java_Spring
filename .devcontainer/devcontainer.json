@@ -12,9 +12,11 @@
         "richardwillis.vscode-gradle",
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
-        "ms-vsliveshare.vsliveshare"
+        "ms-vsliveshare.vsliveshare",
+        "vscode-gitmoji.gitmoji-vscode"
       ]
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "shutdownAction": "stopContainer"
 }
