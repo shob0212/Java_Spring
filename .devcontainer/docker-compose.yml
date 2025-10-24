@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   app:
-    build: .
+    build:
+     context: .
+     dockerfile: Dockerfile
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
@@ -10,7 +12,6 @@ services:
       - "8080:8080"
     depends_on:
       - db
-    user: vscode
 
   db:
     image: postgres:16
