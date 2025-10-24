@@ -13,7 +13,8 @@
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
         "ms-vsliveshare.vsliveshare",
-        "vscode-gitmoji.gitmoji-vscode"
+        "github.vscode-pull-request-github",
+        "seatonjiang.gitmoji-vscode"
       ]
     }
   },
