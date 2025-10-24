@@ -1,32 +1,29 @@
-# --- Java 17 ベース ---
-FROM mcr.microsoft.com/devcontainers/java:17
 
-# --- 環境変数 ---
-ENV DEBIAN_FRONTEND=noninteractive
-ENV SDKMAN_DIR=/root/.sdkman
+# Java 17 + Gradle 8.10.2 ベース
+# -----------------------------------------
+FROM gradle:8.10.2-jdk17
 
-# --- rootで必要なツールをインストール ---
+# root 権限で必要なツールをインストール
 USER root
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         curl \
-        unzip \
-        zip \
         git \
-        postgresql-client && \
+        postgresql-client \
+        ca-certificates && \
+    # Node.js 18.x の導入（gitmoji用）
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g gitmoji-cli && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# --- SDKMANをインストール ---
-RUN curl -s "https://get.sdkman.io" | bash
-
-# --- Gradleインストール（非対話、自動承認） ---
-RUN bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh && yes | sdk install gradle 8.10.2"
-
-# --- 作業ディレクトリ ---
-WORKDIR /workspace/backend
-
-# --- デフォルトユーザー ---
+# デフォルトユーザーを vscode に変更（VSCode Dev Containerで推奨）
 USER vscode
 
-# --- bashをデフォルトに変更（必要に応じて） ---
+# 作業ディレクトリを指定
+WORKDIR /workspace
+
+# bash をデフォルトシェルに
 SHELL ["/bin/bash", "-c"]
+
