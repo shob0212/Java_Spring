@@ -2,7 +2,7 @@
   "name": "Spring Boot Dev Env (Gradle + PostgreSQL)",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspace/backend",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
