@@ -1,5 +1,5 @@
 # ...existing code...
-FROM gradle:8.10.2-jdk17
+FROM gradle:8.10.2-jdk21
 
 # root 権限で必要なツールをインストール
 USER root
