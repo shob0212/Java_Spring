@@ -42,7 +42,7 @@ public class ToDoController {
      * 指定されたIDの「すること」の詳細を表示します。
      */
     @GetMapping("/{id}")
-    public String detail(@PathVariable Integer id, Model model,
+    public String detail(@PathVariable("id") Integer id, Model model,
             RedirectAttributes attributes) {
         // 「すること」IDに対応する「すること」情報を取得
         ToDo ToDo = toDoService.findByIdToDo(id);
@@ -99,7 +99,7 @@ public class ToDoController {
      * 指定されたIDの修正画面を表示します。
      */
     @GetMapping("/edit/{id}")
-    public String edit(@PathVariable Integer id, Model model,
+    public String edit(@PathVariable("id") Integer id, Model model,
             RedirectAttributes attributes) {
         // IDに対応する「すること」を取得
         ToDo target = toDoService.findByIdToDo(id);
@@ -147,7 +147,7 @@ public class ToDoController {
      * 指定されたIDの「すること」を削除します。
      */
     @PostMapping("/delete/{id}")
-    public String delete(@PathVariable Integer id, RedirectAttributes attributes) {
+    public String delete(@PathVariable("id") Integer id, RedirectAttributes attributes) {
         // 削除処理
     	toDoService.deleteToDo(id);
         // フラッシュメッセージ
